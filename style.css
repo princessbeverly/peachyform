@@ -1,0 +1,243 @@
+/*Removing default Padding and Margin*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Setting background to gradient pink and white*/
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #F3A7B0, #FAF4E6);
+    transition: opacity 0.5s ease;
+}
+body.fade-out {
+  opacity: 0;
+}
+/*Setting up the font-style*/
+@font-face {
+    font-family: 'Varcon';
+    src: url('./Assets/varcon.otf') format('opentype');
+}
+
+/*containers ni sa mga form*/
+.grid-container,
+.signin-container,
+.login-container {
+    font-family: Varcon, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    height: 100vh;
+}
+
+/*I am either using vw or px*/
+.welcome-message{
+    font-size: 5vw;
+}
+
+/*This helps me with the layout of the form by defining its size*/
+.border {
+    width: 477px;
+    height: 572px;
+}
+
+.signin-container,
+.login-container {
+    font-family: Instrument Sans, sans-serif;
+}
+
+/*This is for Welcome to Palette gradient, font style, and size*/
+.landing,
+.landing-1 {
+    font-size: 10vw;
+    justify-items: center;
+    background: linear-gradient(to right, #EDB4B6, #F07F7D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 0.9;
+}
+
+.landing-1{
+    font-family: Varcon, sans-serif;
+    font-size: 3vw;
+    margin-bottom: 39px;
+}
+
+/*gi change nako ang font size ani*/
+.welcome-message {
+    font-size: 90px;
+    text-align: center;
+    background: linear-gradient(to right, #8A4948, #F07F7D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#small-message {
+    font-family: Instrument Sans, sans-serif;
+    font-size: 16px;
+    color: #F07F7D;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+.header-text{
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #fffefe;
+}
+.group-2{
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    color: #fffefe;
+    font-size: 0.9vw;
+    margin-bottom: 27px;
+}
+.login-link {
+    color: #F07F7D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*the following are for the pages' button*/
+.start-btn {
+    font-family: Varcon, sans-serif;
+    color: #F07F7D;
+    border: 1px solid #F07F7D;
+    border-radius: 31px;
+    font-size: 17px;
+    width: 215px;
+    height: 42px;
+    background-color: transparent;
+}
+
+.exit-btn {
+    font-family: Varcon, sans-serif;
+    color: #F07F7D;
+    border: 1px solid #F07F7D;
+    border-radius: 31px;
+    font-size: 17px;
+    width: 215px;
+    height: 42px;
+    background-color: transparent;
+    margin-top: 20px;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 37px;
+}
+.submit-btn {
+    font-family: Instrument Sans, sans-serif;
+    font-size: 17px;
+    color: #fffefe;
+    width: 215px;
+    height: 42px;
+    background-color: #F3A7B0;
+    border-radius: 31px;
+    border: transparent;
+    font-weight: bold;
+}
+
+.start-btn,
+.exit-btn,
+.submit-btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-btn:hover,
+.exit-btn:hover,
+.submit-btn:hover {
+    background-color: #1E1E1E;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    padding-bottom: .5em;
+    justify-content: flex-start;
+}
+#first-name,
+#last-name {
+    border: 1px solid #F07F7D;
+    border-radius: 7px;
+    font-size: 0.95vw;
+    width: 224px;
+    height: 37px;
+    margin-right: 20px;
+    margin-bottom: 27px;
+}
+
+#first-name::placeholder,
+#last-name::placeholder,
+#email::placeholder,
+#password::placeholder,
+#confirm-password::placeholder {
+    color:#F07F7D;
+    background-color: #fffefe;
+    opacity: 45%;
+    padding-left: 10px;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#email,
+#password {
+    border: 1px solid #F07F7D;
+    border-radius: 7px;
+    font-size: 0.95vw;
+    width: 477px;;
+    height: 37px;
+    text-align: left;
+    margin-bottom: 23px;
+}
+#confirm-password {
+    border: 1px solid #F07F7D;
+    border-radius: 7px;
+    font-size: 0.95vw;
+    width: 477px;;
+    height: 37px;
+    text-align: left;
+}
+.error-message {
+    font-size: 10px;
+    color: #F07F7D;
+    font-family: Instrument Sans, sans-serif;
+}
+
+
+.sparkle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+

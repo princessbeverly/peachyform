@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <audio id="clickSound" src="./Assets/magic-244951.mp3"></audio>
+  <title>Welcome to Palette!</title>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="welcome-message">
+      <p>WELCOME BACK</p>
+      <p id="greeting">TO PALETTE, <br> </p>
+      <p id="small-message">You have logged in Successfully.</p>
+      <div class="start">
+        <a href="index.html">
+          <button type="submit" class="exit-btn" id="btn">LOG OUT</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const firstName = params.get("firstname"); 
+        if (firstName) {
+            document.getElementById("greeting").innerText = "TO PALETTE, " + firstName + "!";
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <audio id="clickSound" src="./Assets/magic-244951.mp3"></audio>
+        <title>Palette Log In</title>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="border">
+                <div class="landing-1">
+                    <p>WELCOME</p>
+                    <p>TO PALETTE</p>
+                </div>
+                <div class="header">
+                    <div class="group-1">
+                        <p class="header-text">Log in to Your Account</p>
+                    </div>
+                    <div class="group-2">
+                        <p class="header-subtext">New here?</p>
+                        <a href="signup.html" class="login-link">Create Account</a>    
+                    </div>
+                </div>
+                <form id="loginForm" method="post">
+                    <input type="hidden" name="form_type" value="login">
+                        <div class="details">
+                            <input type="text" id="email" name="email" placeholder="Email" required>
+                            <div class="error-display">
+                                <p class="error-message">
+                                    
+                                </p>
+                            </div>
+                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <div class="error-display">
+                                <!-- Error messages will be displayed here -->
+                                <p class="error-message">
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="submit" class="submit-btn" id="btn">Log In</button>
+                        </div>
+                </form>
+            </div>
+        
+        </div>
+    </body>
+</html>
