@@ -1,13 +1,13 @@
-// DESIGN
+// ANIMATION & EFFECTS
 document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", e => {
-    e.preventDefault(); // stop default navigation
+    e.preventDefault(); 
     document.body.classList.add("fade-out");
     setTimeout(() => {
       window.location.href = link.href; // navigate after animation
     }, 500); // matches CSS duration
   });
-});
+}); // this is the transition animation
 
 // script.js
 const button = document.getElementById("btn");
@@ -36,11 +36,10 @@ function createSparkle(x, y) {
   document.body.appendChild(sparkle);
 }
 
-// fixed sparkles like in Figma
 createSparkle(200, 150);
 
 
-// OR (optional) random sparkles
+// Randomized Sparkle
 setInterval(() => {
   const x = Math.random() * window.innerWidth;
   const y = Math.random() * window.innerHeight;
@@ -54,12 +53,14 @@ let users = JSON.parse(localStorage.getItem("users")) || [];
 document.getElementById("signupForm")?.addEventListener("submit", function(event) {
   event.preventDefault();
 
+  // getting the values of user input
   let firstName = document.getElementById("first-name").value.trim();
   let lastName = document.getElementById("last-name").value.trim();
   let email = document.getElementById("email").value.trim();
   let password = document.getElementById("password").value.trim();
   let confirmPassword = document.getElementById("confirm-password").value.trim();
 
+//checker
 if (firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === "") {
   alert("Please fill in all fields.");
   return;
@@ -70,6 +71,7 @@ if (email === "") document.querySelector("#email-error").innerText = "Email is r
 if (password === "") document.querySelector("#pass-error").innerText = "Please enter your password";
 if (confirmPassword === "") document.querySelector("#cpass-error").innerText = "Please confirm your password";
 
+  // Utilizing storage so that the login form will be utilized. Otherwise, login form won't survive alone because it lacks values for program logic
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
   // check if email already exists
@@ -78,9 +80,11 @@ if (confirmPassword === "") document.querySelector("#cpass-error").innerText = "
     return;
   }
 
+  // if it's none existent, it get stored to the local storage
   users.push({ firstName, lastName, email, password });
   localStorage.setItem("users", JSON.stringify(users));
 
+  // and if it's successful, the page will then lead you to the welcome page
   window.location.href = "signinwelcome.html?firstname=" + encodeURIComponent(firstName);
 });
 
@@ -88,9 +92,11 @@ if (confirmPassword === "") document.querySelector("#cpass-error").innerText = "
 document.getElementById("loginForm")?.addEventListener("submit", function(event) {
   event.preventDefault();
 
+  // gikuha nato ang mga values sa user input
   let email = document.getElementById("email").value.trim();
   let password = document.getElementById("password").value.trim();
 
+  // utilizing local storage for the checking of the email and password, if nag exist ba jud.
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let user = users.find(u => u.email === email && u.password === password);
 
@@ -100,6 +106,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function(event)
     document.querySelector(".error-message").innerText = "Invalid email or password.";
   }
 });
+
 
 
 
