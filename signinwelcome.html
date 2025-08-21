@@ -1,3 +1,10 @@
+<!--
+ALA-AN, PRINCESS BEVERLY
+
+This is the third page. After the sign up, this gets opened if sign up is successful.
+Just like the loginwelcome.html, this also uses query string to extract the value of firstname
+and then finds the element where this value would get displayed.
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +30,6 @@
             </div>
         </div>
         <script>
-            // Read firstname from query string
             const params = new URLSearchParams(window.location.search);
             const firstName = params.get("firstname");
 
@@ -32,4 +38,5 @@
             }
         </script>
     </body>
+
 </html>
